@@ -8,7 +8,11 @@ require("dotenv").config();
 require("./db/db");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin:[ "https://ddeploy-mern-1whq.vercel.app"],
+  methods: ["POST","GET","PUT","DELETE"],
+  credentials:true
+}));
 app.use(express.json());
 
 // app.get("/api/user", (req, res) => {
